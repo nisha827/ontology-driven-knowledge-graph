@@ -1,0 +1,7 @@
+{
+  "records": [
+    {"company_id": "CRM-001", "company": "Northstar Analytics Inc.", "domain": "northstar.example", "country": "US"},
+    {"company_id": "CRM-002", "company": "Harbour Systems Ltd", "domain": "harbour.example", "country": "GB"},
+    {"company_id": "CRM-003", "company": "Cedar Labs", "domain": "cedar.example", "country": "CA"}
+  ]
+}
