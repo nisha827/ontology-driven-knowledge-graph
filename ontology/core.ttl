@@ -1,0 +1,19 @@
+@prefix odkg: <https://w3id.org/odkg/example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/odkg/example> a owl:Ontology ;
+    rdfs:label "ODKG Multi-source Integration Ontology" ;
+    rdfs:comment "Minimal illustrative ontology for organisation identity and source provenance." .
+
+odkg:Organisation a owl:Class ;
+    rdfs:subClassOf schema:Organization ;
+    rdfs:label "Organisation" ;
+    rdfs:comment "An organisation represented across one or more source systems." .
+
+odkg:countryCode a owl:DatatypeProperty ;
+    rdfs:domain odkg:Organisation ;
+    rdfs:range xsd:string ;
+    rdfs:label "country code" .
