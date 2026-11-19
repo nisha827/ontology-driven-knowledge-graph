@@ -1,0 +1,10 @@
+PREFIX odkg: <https://w3id.org/odkg/example#>
+PREFIX schema: <https://schema.org/>
+
+SELECT ?organisation ?name ?website ?country
+WHERE {
+  ?organisation a odkg:Organisation ; schema:name ?name .
+  OPTIONAL { ?organisation schema:url ?website . }
+  OPTIONAL { ?organisation odkg:countryCode ?country . }
+}
+ORDER BY ?name

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ontology-driven-knowledge-graph"
+version = "0.1.0"
+description = "A reproducible research prototype for ontology-driven multi-source data integration."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Nisha P"}]
+dependencies = ["rdflib>=7.0,<8.0", "pandas>=2.0,<3.0"]
+
+[project.optional-dependencies]
+validation = ["pyshacl>=0.25,<1.0"]
+test = ["pytest>=8.0,<10.0", "pytest-cov>=5.0,<7.0"]
+
+[project.scripts]
+odkg-demo = "odkg.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"

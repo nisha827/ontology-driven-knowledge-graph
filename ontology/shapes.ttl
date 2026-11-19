@@ -1,0 +1,19 @@
+@prefix odkg: <https://w3id.org/odkg/example#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <https://schema.org/> .
+
+odkg:OrganisationShape a sh:NodeShape ;
+    sh:targetClass odkg:Organisation ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype <http://www.w3.org/2001/XMLSchema#string> ;
+        sh:message "Every organisation must have exactly one string name." ;
+    ] ;
+    sh:property [
+        sh:path odkg:countryCode ;
+        sh:maxCount 1 ;
+        sh:pattern "^[A-Z]{2}$" ;
+        sh:message "Country codes, when present, must be two uppercase letters." ;
+    ] .
